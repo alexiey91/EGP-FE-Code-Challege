@@ -28,7 +28,7 @@ export class UtilsService {
     let data: IMessage[] = [
       {
         isMine:false,
-        link:'/assets/img/avatar7.png',
+        link:'/assets/img/avatar1.png',
         message:"CIAO a tutti",
         name:"Utente 1",
         time:"2021-11-12 00:52"
@@ -42,16 +42,16 @@ export class UtilsService {
       },
       {
         isMine:false,
-        link:'/assets/img/avatar7.png',
+        link:'/assets/img/avatar1.png',
         message:"CIAO a tutti",
         name:"Utente 1",
         time:"2021-09-19 00:52"
       },
       {
         isMine:true,
-        link:'/assets/img/avatar7.png',
+        link:'/assets/img/avatar3.png',
         message:"CIAO a tutti",
-        name:"Utente 5",
+        name:"You",
         time:"2021-10-01 00:52"
       },
     ];

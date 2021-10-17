@@ -1,16 +1,21 @@
-<ul class="chat-box " *ngFor="let message of messages">
-  <div class="chat-hour"><span [class]="{ 'text-right': message.isMine }">{{message.time  | date: 'dd/MM/yyyy hh:mm' }}</span></div>
+<ul class="chat-box" *ngFor="let message of messages">
+  <div class="row" *ngIf="message.isMine">
+    <div class="chat-hour col-6"><span  [class]="{ 'text-left': message.isMine }">{{message.time  | date: 'dd/MM/yyyy hh:mm' }}</span></div>
+    <div class="chat-name user col-6"><span class="user" [class]="{ 'text-right': message.isMine }">{{message.name}}</span></div>
+  </div>
+  <div class="row" *ngIf="!message.isMine">
+    <div class="chat-name user  col-6"><span class="user" [class]="{ 'text-left': !message.isMine }">{{message.name}}</span></div>
+    <div class="chat-hour col-6"><span [class]="{ 'text-right': !message.isMine }">{{message.time  | date: 'dd/MM/yyyy hh:mm' }}</span></div>
+  </div>
   <li *ngIf="!message.isMine" class= 'chat-left'>
     <div class="chat-avatar">
-      <div class="chat-name">{{message.name}}</div>
       <img [src]="message.link" alt="Retail Admin">
     </div>
     <div class="chat-text">{{message.message}}</div>
   </li>
   <li *ngIf="message.isMine" class= 'chat-right'>
-      <div class="chat-text">{{message.message}}</div>
+      <div class="chat-text"  [class]="{ 'text-left': message.isMine }" >{{message.message}}</div>
     <div class="chat-avatar">
-        <div class="chat-name">{{message.name}}</div>
         <img [src]="message.link" alt="Retail Admin">
     </div>
   </li>

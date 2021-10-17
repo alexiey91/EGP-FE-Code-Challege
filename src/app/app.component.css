@@ -369,4 +369,10 @@ ul {
     box-shadow: none;
 }
 
-
+.user {
+    font-size: .75rem !important;
+    font: normal normal bold 14px/18px Univers LT Std !important;
+    letter-spacing: 0px !important;
+    color: #0E141A !important;
+    opacity: 1 !important;
+}

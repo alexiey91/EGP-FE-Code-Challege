@@ -28,7 +28,7 @@ export class TableMessageComponent implements OnInit {
     const date = new Date();
     const msg: IMessage = {
       isMine: true,
-      link:"/assets/img/avatar7.png",
+      link:"/assets/img/avatar3.png",
       message: this.newMessage,
       name: 'You',
       time: date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()+" "+ date.toLocaleTimeString("it-IT")
