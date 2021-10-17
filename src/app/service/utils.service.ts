@@ -22,7 +22,7 @@ export class UtilsService {
   }
 
   /**
-   * Function to set Mock Data into LocalStorage
+   * Function to set Mock Data inside LocalStorage
    */
   setData(): void{
     let data: IMessage[] = [
@@ -77,7 +77,7 @@ export class UtilsService {
    * 
    * @param msg newMessage to Add into localStorage
    */
-  addData(msg: IMessage) : void{
+  addData(msg: IMessage): void{
     this.chat.push(msg);
     this.sort(this.chat);
     // Clear localStorage
@@ -86,7 +86,11 @@ export class UtilsService {
     localStorage.setItem('chat',JSON.stringify(this.chat));
   }
 
-  sort(list: IMessage[]){
+  /**
+   * Function to order list of Message by date from older to newest
+   * @param list : list of Message to sort by date
+   */
+  sort(list: IMessage[]): void{
     list.sort(function(a, b) {
       var keyA = new Date(a.time),
         keyB = new Date(b.time);
@@ -95,5 +99,16 @@ export class UtilsService {
       if (keyA > keyB) return 1;
       return 0;
     });
+  }
+
+  /**
+   * 
+   * @param list : List of storaged Message
+   * @param userList : List of user to filer message
+   * @returns : New List of Message stored for specific user
+   */
+  filterMessage(list: IMessage[], userList: string[]){
+    const filteredList = Object.assign(list);
+    return filteredList.filter((message: IMessage) => userList.includes(message.name))
   }
 }

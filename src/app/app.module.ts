@@ -6,16 +6,20 @@ import { MessageComponent } from './message/message.component';
 import { TableMessageComponent } from './table-message/table-message.component';
 import { UtilsService } from './service/utils.service';
 import { FormsModule } from '@angular/forms';
+import { TextTruncatePipe } from './pipe/text-truncate.pipe';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
     AppComponent,
     MessageComponent,
-    TableMessageComponent
+    TableMessageComponent,
+    TextTruncatePipe
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [UtilsService],
   bootstrap: [AppComponent]

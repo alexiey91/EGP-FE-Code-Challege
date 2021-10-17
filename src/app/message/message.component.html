@@ -1,4 +1,4 @@
-<ul class="chat-box" *ngFor="let message of messages">
+<ul class="chat-box" *ngFor="let message of messages; let i = index">
   <div class="row" *ngIf="message.isMine">
     <div class="chat-hour col-6"><span  [class]="{ 'text-left': message.isMine }">{{message.time  | date: 'dd/MM/yyyy hh:mm' }}</span></div>
     <div class="chat-name user col-6"><span class="user" [class]="{ 'text-right': message.isMine }">{{message.name}}</span></div>
@@ -11,10 +11,10 @@
     <div class="chat-avatar">
       <img [src]="message.link" alt="Retail Admin">
     </div>
-    <div class="chat-text">{{message.message}}</div>
+    <div class="chat-text">{{message.message | textTruncate:limit:showAll[i]}} <a (click)="triggerReadMore(i)" href="javascript:void(0)" *ngIf="!showAll[i]">Read More</a></div>
   </li>
   <li *ngIf="message.isMine" class= 'chat-right'>
-      <div class="chat-text"  [class]="{ 'text-left': message.isMine }" >{{message.message}}</div>
+      <div class="chat-text"  [class]="{ 'text-left': message.isMine }" >{{message.message | textTruncate:limit:showAll[i]}} <a (click)="triggerReadMore(i)" href="javascript:void(0)" *ngIf="!showAll[i]">Read More</a></div>
     <div class="chat-avatar">
         <img [src]="message.link" alt="Retail Admin">
     </div>
