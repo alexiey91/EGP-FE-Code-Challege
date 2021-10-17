@@ -1,0 +1,17 @@
+<ul class="chat-box " *ngFor="let message of messages">
+  <div class="chat-hour"><span [class]="{ 'text-right': message.isMine }">{{message.time  | date: 'dd/MM/yyyy hh:mm' }}</span></div>
+  <li *ngIf="!message.isMine" class= 'chat-left'>
+    <div class="chat-avatar">
+      <div class="chat-name">{{message.name}}</div>
+      <img [src]="message.link" alt="Retail Admin">
+    </div>
+    <div class="chat-text">{{message.message}}</div>
+  </li>
+  <li *ngIf="message.isMine" class= 'chat-right'>
+      <div class="chat-text">{{message.message}}</div>
+    <div class="chat-avatar">
+        <div class="chat-name">{{message.name}}</div>
+        <img [src]="message.link" alt="Retail Admin">
+    </div>
+  </li>
+</ul>
