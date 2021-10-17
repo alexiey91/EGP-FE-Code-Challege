@@ -1,11 +1,11 @@
-
   <div class="chat-container DivWithScroll">
     <app-message [messages]="messageList"></app-message>
   </div>
   <div class="chat-message clearfix">
     <div class="input-group mb-0">
       <div class="col-12 mb-2">
-        <input type="text" class="form-control input" [(ngModel)]="newMessage" placeholder="Enter note about the process...">
+        <input type="text" class="form-control input" [(ngModel)]="newMessage"
+          placeholder="Enter note about the process...">
       </div>
       <div class="col-12">
         <button type="button" class="btn float-end btn-send" (click)="publish()">Publish</button>
