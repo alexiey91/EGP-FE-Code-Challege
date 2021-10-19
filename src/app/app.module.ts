@@ -8,6 +8,7 @@ import { UtilsService } from './service/utils.service';
 import { FormsModule } from '@angular/forms';
 import { TextTruncatePipe } from './pipe/text-truncate.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 @NgModule({
   declarations: [
@@ -25,3 +26,4 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+platformBrowserDynamic().bootstrapModule(AppModule)
